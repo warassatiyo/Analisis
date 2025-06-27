@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPK Smartphone - Dashboard SAW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="logoupgris.png" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 8px;">
+      <span>SPK SAW</span>
+    </div>
+    <nav>
+      <a href="#beranda">🏠 Beranda</a>
+      <a href="#alternatif">📱 Alternatif</a>
+      <a href="#kriteria">📊 Kriteria</a>
+      <a href="#hasil">✅ Hasil SAW</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Topbar -->
+    <header class="topbar">
+      <h1>Dashboard SPK Smartphone</h1>
+      <div class="topbar-right">
+        <button id="mode-toggle">🌙</button>
+        <div class="user-info">
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="beranda" class="section welcome-section">
+      <div class="card welcome-card">
+        <h3>Selamat Datang</h3>
+        <p>Gunakan metode SAW untuk membantu memilih smartphone terbaik sesuai kriteria Anda.</p>
+      </div>
+
+      <div class="kelompok-footer animate-footer">
+        <h4>TIM 1</h4>
+        <ul>
+          <li>Hafizh Zaldy Alghani - 23670140</li>
+          <li>Raditya Ario Seto - 23670121</li>
+          <li>Firda Nova Safitri - 23670106</li>
+          <li>Bagas Satiyo - 23670113</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Alternatif Section -->
+    <section id="alternatif" class="section">
+      <div class="card">
+        <h2>Tambah Alternatif</h2>
+        <form id="form-alternatif" class="form">
+          <input type="text" id="nama" name="nama" placeholder="Nama Smartphone" required />
+          <input type="number" id="harga" name="harga" placeholder="Harga" required />
+          <input type="number" id="ram" name="ram" placeholder="RAM" required />
+          <input type="number" id="memori" name="memori" placeholder="Memori Internal" required />
+          <input type="number" id="kamera" name="kamera" placeholder="Kamera" required />
+          <input type="number" id="layar" name="layar" placeholder="Ukuran Layar" required />
+          <button type="submit" class="btn">Tambah Alternatif</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Data Alternatif</h2>
+        <table>
+          <thead>
+            <tr><th>Nama</th><th>Harga</th><th>RAM</th><th>Memori</th><th>Kamera</th><th>Layar</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="tbody-alternatif"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Kriteria Section -->
+    <section id="kriteria" class="section">
+      <div class="card">
+        <h2>Tambah Kriteria</h2>
+        <form id="form-kriteria" class="form">
+          <input type="text" id="namaKriteria" name="namaKriteria" placeholder="Nama Kriteria" required />
+          <input type="number" id="bobotKriteria" name="bobotKriteria" placeholder="Bobot (0-1)" step="0.01" required />
+          <select id="tipeKriteria" name="tipeKriteria">
+            <option value="benefit">Benefit</option>
+            <option value="cost">Cost</option>
+          </select>
+          <button type="submit" class="btn">Tambah Kriteria</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Data Kriteria</h2>
+        <table>
+          <thead><tr><th>Nama</th><th>Bobot</th><th>Tipe</th><th>Aksi</th></tr></thead>
+          <tbody id="tbody-kriteria"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Hasil Section -->
+    <section id="hasil" class="section">
+      <div class="card">
+        <h2>Hasil Perhitungan SAW</h2>
+        <button class="btn hitung-btn" onclick="hitungSAW()">Hitung SAW</button>
+        <table>
+          <thead><tr><th>Alternatif</th><th>Nilai Akhir</th><th>Ranking</th></tr></thead>
+          <tbody id="tbody-hasil"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
